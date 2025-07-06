@@ -37,17 +37,3 @@ next-env.d.ts
 
 # clerk configuration (can include secrets)
 /.clerk/
-
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-env/
-venv/
-.env
-
-# IDEs
-.vscode/
-.idea/

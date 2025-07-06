@@ -1,0 +1,25 @@
+
+> @remitmatch/web@0.1.0 dev
+> next dev --turbo
+
+   ▲ Next.js 15.3.5 (Turbopack)
+   - Local:        http://localhost:3003
+   - Network:      http://172.24.101.120:3003
+   - Environments: .env.local, .env
+
+ ✓ Starting...
+ ○ Compiling middleware ...
+ ✓ Compiled middleware in 564ms
+ ✓ Ready in 2.2s
+ ○ Compiling / ...
+ ✓ Compiled / in 8.2s
+`legacyBehavior` is deprecated and will be removed in a future release. A codemod is available to upgrade your components:
+
+npx @next/codemod@latest new-link .
+
+Learn more: https://nextjs.org/docs/app/building-your-application/upgrading/codemods#remove-a-tags-from-link-components
+ GET / 200 in 9905ms
+ GET / 200 in 310ms
+ ○ Compiling /favicon.ico ...
+ ✓ Compiled /favicon.ico in 1440ms
+ GET /favicon.ico?favicon.45db1c09.ico 200 in 1870ms

@@ -1,0 +1,447 @@
+INFO:     Will watch for changes in these directories: ['/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api']
+INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
+INFO:     Started reloader process [3271865] using WatchFiles
+INFO:     Started server process [3271878]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:33040 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44980 - "HEAD /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60590 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60590 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59826 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59826 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60146 - "GET /stripe/checkout HTTP/1.1" 405 Method Not Allowed
+INFO:     127.0.0.1:37406 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37406 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49328 - "POST /stripe/checkout HTTP/1.1" 401 Unauthorized
+{"error": "[Errno -2] Name or service not known", "event": "Failed to fetch JWKS", "logger": "app.middleware.auth", "level": "error", "timestamp": "2025-07-06T13:53:16.872164Z"}
+{"error": "", "event": "Unexpected authentication error", "logger": "app.middleware.auth", "level": "error", "timestamp": "2025-07-06T13:53:16.872524Z"}
+INFO:     127.0.0.1:60900 - "POST /stripe/checkout HTTP/1.1" 500 Internal Server Error
+{"error": "Webhook signature verification failed: Unable to extract timestamp and signatures from header", "event": "Webhook verification failed", "logger": "app.routers.stripe", "level": "error", "timestamp": "2025-07-06T13:53:28.192998Z"}
+INFO:     127.0.0.1:34768 - "POST /stripe/webhook HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:39180 - "OPTIONS /stripe/checkout HTTP/1.1" 405 Method Not Allowed
+INFO:     127.0.0.1:53000 - "POST /stripe/checkout HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:48674 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40444 - "GET / HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'apps/api/app/routers/__init__.py', 'apps/api/app/services/__init__.py', 'app/models/stripe.py', 'app/services/stripe_service.py', 'apps/api/app/__init__.py', 'apps/api/app/utils/__init__.py', 'main.py', 'app/config.py', 'app/routers/stripe.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3271878]
+Process SpawnProcess-2:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/_subprocess.py", line 76, in subprocess_started
+    target(sockets=sockets)
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/server.py", line 61, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/server.py", line 68, in serve
+    config.load()
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/config.py", line 467, in load
+    self.loaded_app = import_from_string(self.app)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/importer.py", line 21, in import_from_string
+    module = importlib.import_module(module_str)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/main.py", line 1
+    <<<<<<< HEAD
+    ^^
+SyntaxError: invalid syntax
+WARNING:  WatchFiles detected changes in 'app/config.py'. Reloading...
+Process SpawnProcess-3:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/_subprocess.py", line 76, in subprocess_started
+    target(sockets=sockets)
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/server.py", line 61, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/server.py", line 68, in serve
+    config.load()
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/config.py", line 467, in load
+    self.loaded_app = import_from_string(self.app)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/importer.py", line 21, in import_from_string
+    module = importlib.import_module(module_str)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/main.py", line 1
+    <<<<<<< HEAD
+    ^^
+SyntaxError: invalid syntax
+WARNING:  WatchFiles detected changes in 'app/models/stripe.py'. Reloading...
+Process SpawnProcess-4:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/_subprocess.py", line 76, in subprocess_started
+    target(sockets=sockets)
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/server.py", line 61, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/server.py", line 68, in serve
+    config.load()
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/config.py", line 467, in load
+    self.loaded_app = import_from_string(self.app)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/importer.py", line 21, in import_from_string
+    module = importlib.import_module(module_str)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/main.py", line 1
+    <<<<<<< HEAD
+    ^^
+SyntaxError: invalid syntax
+WARNING:  WatchFiles detected changes in 'app/services/stripe_service.py'. Reloading...
+Process SpawnProcess-5:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/_subprocess.py", line 76, in subprocess_started
+    target(sockets=sockets)
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/server.py", line 61, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/server.py", line 68, in serve
+    config.load()
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/config.py", line 467, in load
+    self.loaded_app = import_from_string(self.app)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/importer.py", line 21, in import_from_string
+    module = importlib.import_module(module_str)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/main.py", line 1
+    <<<<<<< HEAD
+    ^^
+SyntaxError: invalid syntax
+WARNING:  WatchFiles detected changes in 'app/services/stripe_service.py'. Reloading...
+Process SpawnProcess-6:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/_subprocess.py", line 76, in subprocess_started
+    target(sockets=sockets)
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/server.py", line 61, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/server.py", line 68, in serve
+    config.load()
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/config.py", line 467, in load
+    self.loaded_app = import_from_string(self.app)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/importer.py", line 21, in import_from_string
+    module = importlib.import_module(module_str)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/main.py", line 1
+    <<<<<<< HEAD
+    ^^
+SyntaxError: invalid syntax
+WARNING:  WatchFiles detected changes in 'main.py'. Reloading...
+Process SpawnProcess-7:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/_subprocess.py", line 76, in subprocess_started
+    target(sockets=sockets)
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/server.py", line 61, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/server.py", line 68, in serve
+    config.load()
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/config.py", line 467, in load
+    self.loaded_app = import_from_string(self.app)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/importer.py", line 21, in import_from_string
+    module = importlib.import_module(module_str)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/main.py", line 40
+    <<<<<<< HEAD
+    ^^
+SyntaxError: invalid syntax
+WARNING:  WatchFiles detected changes in 'main.py'. Reloading...
+Process SpawnProcess-8:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/_subprocess.py", line 76, in subprocess_started
+    target(sockets=sockets)
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/server.py", line 61, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/server.py", line 68, in serve
+    config.load()
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/config.py", line 467, in load
+    self.loaded_app = import_from_string(self.app)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/importer.py", line 21, in import_from_string
+    module = importlib.import_module(module_str)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/main.py", line 75
+    <<<<<<< HEAD
+    ^^
+SyntaxError: invalid syntax
+WARNING:  WatchFiles detected changes in 'main.py'. Reloading...
+Process SpawnProcess-9:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/_subprocess.py", line 76, in subprocess_started
+    target(sockets=sockets)
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/server.py", line 61, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/server.py", line 68, in serve
+    config.load()
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/config.py", line 467, in load
+    self.loaded_app = import_from_string(self.app)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/importer.py", line 21, in import_from_string
+    module = importlib.import_module(module_str)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/main.py", line 4, in <module>
+    from app.routers import stripe
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/app/routers/__init__.py", line 1, in <module>
+    from . import stripe
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/app/routers/stripe.py", line 1
+    <<<<<<< HEAD
+    ^^
+SyntaxError: invalid syntax
+WARNING:  WatchFiles detected changes in 'app/routers/stripe.py'. Reloading...
+INFO:     Started server process [3331280]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'app/models/stripe.py', 'app/middleware/auth.py', 'app/services/stripe_service.py', 'main.py', 'app/config.py', 'app/middleware/__init__.py', 'app/routers/stripe.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3331280]
+Process SpawnProcess-11:
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/_subprocess.py", line 76, in subprocess_started
+    target(sockets=sockets)
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/server.py", line 61, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/server.py", line 68, in serve
+    config.load()
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/config.py", line 467, in load
+    self.loaded_app = import_from_string(self.app)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/uvicorn/importer.py", line 21, in import_from_string
+    module = importlib.import_module(module_str)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/main.py", line 3, in <module>
+    from app.config import settings
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/app/config.py", line 24, in <module>
+    settings = Settings()
+               ^^^^^^^^^^
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/pydantic_settings/main.py", line 71, in __init__
+    super().__init__(
+  File "/home/anthony/workbench/testApp/nextjs-starter-kit-ras-mic/apps/api/venv/lib/python3.12/site-packages/pydantic/main.py", line 164, in __init__
+    __pydantic_self__.__pydantic_validator__.validate_python(data, self_instance=__pydantic_self__)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for Settings
+clerk_domain
+  Extra inputs are not permitted [type=extra_forbidden, input_value='your_clerk_domain', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.5/v/extra_forbidden
+clerk_audience
+  Extra inputs are not permitted [type=extra_forbidden, input_value='your_clerk_audience', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.5/v/extra_forbidden
+WARNING:  WatchFiles detected changes in 'app/models/stripe.py', 'app/middleware/auth.py', 'app/services/stripe_service.py', 'main.py', 'app/config.py', 'app/middleware/__init__.py', 'app/routers/stripe.py'. Reloading...
+INFO:     Started server process [3349509]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'apps/api/app/routers/__init__.py', 'apps/api/app/services/__init__.py', 'apps/api/app/__init__.py', 'apps/api/app/utils/__init__.py', 'apps/api/app/models/__init__.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3349509]
+INFO:     Started server process [3351604]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:59490 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51582 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51596 - "GET /stripe/test HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45884 - "POST /stripe/checkout HTTP/1.1" 401 Unauthorized
+{"error": "[Errno -2] Name or service not known", "event": "Failed to fetch JWKS", "logger": "app.middleware.auth", "level": "error", "timestamp": "2025-07-06T14:33:49.133288Z"}
+{"error": "", "event": "Unexpected authentication error", "logger": "app.middleware.auth", "level": "error", "timestamp": "2025-07-06T14:33:49.133551Z"}
+INFO:     127.0.0.1:57852 - "POST /stripe/checkout HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:58046 - "POST /stripe/webhook HTTP/1.1" 400 Bad Request

@@ -17,4 +17,4 @@ RemitMatch is a web application that streamlines the reconciliation of remittanc
 
 ## Testing
  - Wherever possible, confirm changes or updates with Puppeteer MCP. You should identify issues in advance, rather than needing to be told.
-
+ - For test account, use abuildsit@gmail.com - pw 'Drumbeat!1'
