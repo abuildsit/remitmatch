@@ -18,6 +18,10 @@ class Settings(BaseSettings):
     # CORS
     FRONTEND_URL: str = "http://localhost:3000"
     
+    # Clerk Authentication
+    CLERK_DOMAIN: str
+    CLERK_AUDIENCE: str
+    
     class Config:
         env_file = ".env"
 

@@ -141,12 +141,24 @@ export default function Pricing() {
   const handleCheckout = async (priceId: string, subscription: boolean) => {
 
     try {
+      // Get JWT token from Clerk
+      const token = await user?.getToken();
+      
+      if (!token) {
+        toast('Authentication required', {
+          description: 'Please sign in to make a purchase'
+        });
+        return;
+      }
+
       const { data } = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/stripe/checkout`,
         { 
-          user_id: user?.id, 
-          email: user?.emailAddresses?.[0]?.emailAddress, 
           price_id: priceId, 
           subscription 
+        }, {
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
         });
 
       if (data.session_id) {
@@ -162,9 +174,18 @@ export default function Pricing() {
         toast('Failed to create checkout session')
         return
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error during checkout:', error);
-      toast('Error during checkout')
+      
+      if (error.response?.status === 401) {
+        toast('Authentication failed', {
+          description: 'Please sign in again'
+        });
+      } else {
+        toast('Error during checkout', {
+          description: 'Please try again later'
+        });
+      }
       return
     }
   };
