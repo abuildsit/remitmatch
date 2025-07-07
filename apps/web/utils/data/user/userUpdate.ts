@@ -26,16 +26,14 @@ export const userUpdate = async ({
 
   try {
     const { data, error } = await supabase
-      .from("user")
-      .update([
-        {
+      .from("users")
+      .update({
           email,
           first_name,
           last_name,
           profile_image_url,
           user_id,
-        },
-      ])
+        })
       .eq("email", email)
       .select();
 
