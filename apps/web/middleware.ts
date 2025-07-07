@@ -21,6 +21,14 @@ export default function middleware(req: any) {
     return clerkMiddleware(async (auth, req) => {
       const resolvedAuth = await auth();
 
+      // In development mode, log auth status for debugging
+      if (process.env.NODE_ENV === "development" && process.env.DEV_MODE === "true") {
+        console.log(`🔐 Auth check for ${req.nextUrl.pathname}:`, {
+          userId: resolvedAuth.userId,
+          isProtected: isProtectedRoute(req),
+        });
+      }
+
       if (!resolvedAuth.userId && isProtectedRoute(req)) {
         return resolvedAuth.redirectToSignIn();
       } else {

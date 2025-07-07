@@ -6,7 +6,7 @@ import { CheckCircle2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import React, { useEffect, useState } from "react"
 import { cn } from "@/lib/utils"
-import { useUser } from "@clerk/nextjs"
+import { useUser, useAuth } from "@clerk/nextjs"
 import axios from "axios"
 import { loadStripe } from "@stripe/stripe-js"
 import { toast } from "sonner"
@@ -132,6 +132,7 @@ export default function Pricing() {
   const [isYearly, setIsYearly] = useState<boolean>(false)
   const togglePricingPeriod = (value: string) => setIsYearly(parseInt(value) === 1)
   const { user } = useUser();
+  const { getToken } = useAuth();
   const [stripePromise, setStripePromise] = useState<Promise<any> | null>(null)
 
   useEffect(() => {
@@ -142,7 +143,7 @@ export default function Pricing() {
 
     try {
       // Get JWT token from Clerk
-      const token = await user?.getToken();
+      const token = await getToken();
       
       if (!token) {
         toast('Authentication required', {

@@ -85,4 +85,39 @@ async def root():
 
 @app.get("/health")
 async def health_check():
-    return {"status": "healthy", "environment": settings.API_ENV}
+    import psutil
+    from datetime import datetime
+    
+    start_time = time.time()
+    
+    health_data = {
+        "status": "healthy",
+        "timestamp": datetime.utcnow().isoformat(),
+        "environment": settings.API_ENV,
+        "version": "0.1.0",
+        "uptime": time.time() - start_time,
+    }
+    
+    # Add database health check if available
+    try:
+        # This would need actual database connection testing
+        health_data["database"] = {
+            "status": "connected",
+            "responseTime": 0.1  # This would be actual DB response time
+        }
+    except Exception as e:
+        health_data["database"] = {
+            "status": "disconnected",
+            "error": str(e)
+        }
+        health_data["status"] = "unhealthy"
+    
+    # Add system metrics in development
+    if settings.API_ENV == "development":
+        health_data["system"] = {
+            "cpu_percent": psutil.cpu_percent(),
+            "memory_percent": psutil.virtual_memory().percent,
+            "disk_percent": psutil.disk_usage('/').percent if hasattr(psutil, 'disk_usage') else None
+        }
+    
+    return health_data

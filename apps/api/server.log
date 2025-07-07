@@ -445,3 +445,8 @@ INFO:     127.0.0.1:45884 - "POST /stripe/checkout HTTP/1.1" 401 Unauthorized
 {"error": "", "event": "Unexpected authentication error", "logger": "app.middleware.auth", "level": "error", "timestamp": "2025-07-06T14:33:49.133551Z"}
 INFO:     127.0.0.1:57852 - "POST /stripe/checkout HTTP/1.1" 500 Internal Server Error
 INFO:     127.0.0.1:58046 - "POST /stripe/webhook HTTP/1.1" 400 Bad Request
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [3351604]
+INFO:     Stopping reloader process [3271865]
